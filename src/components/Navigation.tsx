@@ -12,14 +12,15 @@ export const Navigation = () => {
     { path: '/projects', label: 'Projects' },
     { path: '/feedback', label: 'Client Feedback' },
     { path: '/contact', label: 'Contact' },
+    { path: '/admin', label: 'Admin' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 cyber-nav">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+          <Link to="/" className="text-3xl font-bold cyber-text animate-hologram">
             DEV DUO
           </Link>
 
