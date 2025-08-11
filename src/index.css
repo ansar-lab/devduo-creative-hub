@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* DevDuo Creative Hub Design System - Dark Purple Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark Purple Gradient Background System */
+    --background: 285 100% 8%; /* Deep purple base */
+    --foreground: 300 20% 95%; /* Light purple-white text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card System with Purple Tones */
+    --card: 285 50% 12%; /* Darker purple for cards */
+    --card-foreground: 300 15% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover System */
+    --popover: 285 60% 10%;
+    --popover-foreground: 300 15% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Purple Brand Colors */
+    --primary: 285 85% 45%; /* Vibrant purple */
+    --primary-foreground: 300 20% 95%;
+    --primary-glow: 285 100% 65%; /* Lighter purple for glow effects */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary Purple Variants */
+    --secondary: 285 40% 20%; /* Medium purple */
+    --secondary-foreground: 300 15% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Purple Tones */
+    --muted: 285 30% 15%;
+    --muted-foreground: 285 15% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent Purple */
+    --accent: 290 70% 35%;
+    --accent-foreground: 300 15% 90%;
 
+    /* Destructive (keeping red for errors) */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 300 20% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border and Input Purple */
+    --border: 285 25% 25%;
+    --input: 285 30% 18%;
+    --ring: 285 85% 45%;
 
-    --radius: 0.5rem;
+    /* Purple Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(285, 100%, 8%), hsl(285, 85%, 25%));
+    --gradient-hero: linear-gradient(135deg, hsl(285, 100%, 8%), hsl(295, 70%, 15%), hsl(285, 85%, 25%));
+    --gradient-card: linear-gradient(145deg, hsl(285, 50%, 12%), hsl(290, 40%, 18%));
+    --gradient-glow: linear-gradient(135deg, hsl(285, 100%, 45%), hsl(295, 90%, 55%));
+    
+    /* Shadows with Purple Glow */
+    --shadow-purple: 0 10px 40px -10px hsl(285 85% 45% / 0.3);
+    --shadow-purple-lg: 0 20px 60px -10px hsl(285 85% 45% / 0.4);
+    --shadow-glow: 0 0 40px hsl(285 100% 65% / 0.5);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +124,187 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-primary);
+    min-height: 100vh;
+    cursor: none; /* Hide default cursor for custom cursor */
+  }
+}
+
+@layer components {
+  /* Custom Cursor Styles */
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--gradient-glow);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .custom-cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, hsl(285 100% 65% / 0.3), transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Founder Card Hover Effects */
+  .founder-card {
+    @apply relative overflow-hidden rounded-2xl;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-purple);
+    transition: var(--transition-smooth);
+  }
+
+  .founder-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-purple-lg);
+  }
+
+  .founder-social-icons {
+    @apply absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4;
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    transition: var(--transition-bounce);
+  }
+
+  .founder-card:hover .founder-social-icons {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Gradient Button Styles */
+  .btn-gradient {
+    background: var(--gradient-glow);
+    @apply text-primary-foreground font-semibold py-3 px-8 rounded-xl;
+    box-shadow: var(--shadow-purple);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(300 100% 80% / 0.3), transparent);
+    transition: left 0.6s;
+  }
+
+  .btn-gradient:hover::before {
+    left: 100%;
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-purple-lg);
+  }
+
+  /* Project Card Animations */
+  .project-card {
+    @apply rounded-2xl overflow-hidden;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-purple);
+    transition: var(--transition-smooth);
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-purple-lg);
+  }
+
+  /* Navigation Styles */
+  .nav-link {
+    @apply relative text-foreground font-medium transition-colors;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-glow);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  /* Animation Keyframes */
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.8;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      opacity: 0.4;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Utility Classes */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
   }
 }
