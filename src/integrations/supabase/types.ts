@@ -148,7 +148,33 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      public_feedbacks: {
+        Row: {
+          client_name_sanitized: string | null
+          created_at: string | null
+          feedback: string | null
+          id: string | null
+          project_title: string | null
+          rating: number | null
+        }
+        Insert: {
+          client_name_sanitized?: never
+          created_at?: string | null
+          feedback?: string | null
+          id?: string | null
+          project_title?: string | null
+          rating?: number | null
+        }
+        Update: {
+          client_name_sanitized?: never
+          created_at?: string | null
+          feedback?: string | null
+          id?: string | null
+          project_title?: string | null
+          rating?: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       get_current_user_role: {
