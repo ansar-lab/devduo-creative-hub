@@ -6,36 +6,36 @@
 
 @layer base {
   :root {
-    /* Futuristic Purple Gradient Background System */
+    /* Updated Purple Gradient Background System - #593d6b + #55147d */
     --background: 280 100% 4%; /* Ultra deep cyber purple */
     --foreground: 300 30% 98%; /* Bright cyber white text */
 
     /* Glassmorphism Card System */
-    --card: 285 60% 8%; /* Dark glass purple */
+    --card: 267 32% 15%; /* Dark glass purple based on #593d6b */
     --card-foreground: 300 25% 95%;
-    --glass-bg: 285 40% 12% / 0.1; /* Ultra transparent glass */
-    --glass-border: 290 60% 50% / 0.2; /* Glowing glass border */
+    --glass-bg: 267 32% 15% / 0.1; /* Ultra transparent glass */
+    --glass-border: 267 69% 36% / 0.2; /* Glowing glass border */
 
     /* Popover System */
-    --popover: 285 70% 6%;
+    --popover: 267 32% 12%;
     --popover-foreground: 300 25% 95%;
 
-    /* Futuristic Primary Colors */
-    --primary: 285 100% 55%; /* Neon purple */
+    /* Futuristic Primary Colors - Based on #55147d */
+    --primary: 267 69% 29%; /* Primary from #55147d */
     --primary-foreground: 300 30% 98%;
-    --primary-glow: 285 100% 75%; /* Intense neon glow */
-    --primary-dark: 285 100% 35%; /* Darker neon variant */
+    --primary-glow: 267 69% 45%; /* Lighter version for glow */
+    --primary-dark: 267 69% 20%; /* Darker variant */
 
-    /* Cyber Secondary Colors */
-    --secondary: 285 60% 25%; /* Medium cyber purple */
+    /* Cyber Secondary Colors - Based on #593d6b */
+    --secondary: 267 32% 33%; /* Secondary from #593d6b */
     --secondary-foreground: 300 25% 95%;
 
     /* Muted Cyber Tones */
-    --muted: 285 40% 10%;
-    --muted-foreground: 285 20% 65%;
+    --muted: 267 32% 15%;
+    --muted-foreground: 267 20% 65%;
 
     /* Accent Cyber Colors */
-    --accent: 295 90% 45%;
+    --accent: 267 69% 36%;
     --accent-foreground: 300 25% 95%;
 
     /* Destructive (cyber red) */
@@ -47,19 +47,19 @@
     --input: 285 60% 8% / 0.8;
     --ring: 285 100% 55%;
 
-    /* Futuristic Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(280, 100%, 4%), hsl(285, 80%, 15%), hsl(295, 60%, 25%));
-    --gradient-hero: radial-gradient(ellipse at center, hsl(285, 100%, 8%), hsl(280, 100%, 4%));
-    --gradient-card: linear-gradient(145deg, hsl(285, 60%, 8% / 0.8), hsl(290, 50%, 12% / 0.6));
-    --gradient-glow: linear-gradient(135deg, hsl(285, 100%, 55%), hsl(295, 100%, 65%));
-    --gradient-glass: linear-gradient(145deg, hsl(285, 40%, 12% / 0.1), hsl(295, 50%, 20% / 0.05));
-    --gradient-neon: linear-gradient(90deg, hsl(285, 100%, 55%), hsl(295, 100%, 65%), hsl(305, 100%, 55%));
+    /* Updated Gradients - #593d6b + #55147d */
+    --gradient-primary: linear-gradient(135deg, hsl(267, 32%, 15%), hsl(267, 69%, 29%), hsl(267, 32%, 33%));
+    --gradient-hero: radial-gradient(ellipse at center, hsl(267, 69%, 12%), hsl(267, 32%, 8%));
+    --gradient-card: linear-gradient(145deg, hsl(267, 32%, 15% / 0.8), hsl(267, 69%, 20% / 0.6));
+    --gradient-glow: linear-gradient(135deg, hsl(267, 69%, 29%), hsl(267, 69%, 45%));
+    --gradient-glass: linear-gradient(145deg, hsl(267, 32%, 15% / 0.1), hsl(267, 69%, 25% / 0.05));
+    --gradient-neon: linear-gradient(90deg, hsl(267, 69%, 29%), hsl(267, 69%, 45%), hsl(267, 32%, 33%));
     
-    /* Futuristic Shadows */
-    --shadow-cyber: 0 0 30px hsl(285 100% 55% / 0.3), 0 0 60px hsl(285 100% 55% / 0.1);
-    --shadow-cyber-lg: 0 0 50px hsl(285 100% 55% / 0.4), 0 0 100px hsl(285 100% 55% / 0.2);
-    --shadow-neon: 0 0 20px hsl(285 100% 75% / 0.6), inset 0 0 20px hsl(285 100% 55% / 0.1);
-    --shadow-glass: 0 8px 32px hsl(285 100% 4% / 0.4), inset 0 1px 0 hsl(285 60% 50% / 0.2);
+    /* Updated Shadows - #593d6b + #55147d */
+    --shadow-cyber: 0 0 30px hsl(267 69% 29% / 0.3), 0 0 60px hsl(267 69% 29% / 0.1);
+    --shadow-cyber-lg: 0 0 50px hsl(267 69% 29% / 0.4), 0 0 100px hsl(267 69% 29% / 0.2);
+    --shadow-neon: 0 0 20px hsl(267 69% 45% / 0.6), inset 0 0 20px hsl(267 69% 29% / 0.1);
+    --shadow-glass: 0 8px 32px hsl(267 32% 8% / 0.4), inset 0 1px 0 hsl(267 69% 36% / 0.2);
     
     /* Cyber Animations */
     --transition-cyber: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);

@@ -2,8 +2,6 @@ import { FounderCard } from '@/components/FounderCard';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Code, Smartphone, Megaphone, Palette } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import tvSathwikImage from '@/assets/tv-sathwik-sai.png';
-import mdAnsarImage from '@/assets/md-ansar-vali.png';
 
 const Home = () => {
   const services = [
@@ -36,17 +34,17 @@ const Home = () => {
   const founders = [
     {
       name: 'TV Sathwik Sai',
-      image: tvSathwikImage,
+      image: '/lovable-uploads/0250e237-9743-4be2-b11b-1f501eea372d.png',
       linkedin: 'https://www.linkedin.com/in/sathwik-sai-t-v-ba202830a',
       instagram: 'https://www.instagram.com/sathwik__s_a_i__',
-      email: 'mailto:tvsathwiktvsathwiksai@gmail.com'
+      email: 'mailto:devduocompany@gmail.com'
     },
     {
       name: 'MD Ansar Vali',
-      image: mdAnsarImage,
+      image: '/lovable-uploads/10c986ba-e64c-4f36-b0f7-3c31e81c6649.png',
       linkedin: 'https://www.linkedin.com/in/mohammad-ansar-vali-80b099317',
       instagram: 'https://www.instagram.com/_kakashi_3_',
-      email: 'mailto:ansavali3231@gmail.com'
+      email: 'mailto:devduocompany@gmail.com'
     }
   ];
 
