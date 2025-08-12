@@ -5,12 +5,10 @@ import { Loader2, AlertCircle, Star } from 'lucide-react';
 
 interface Feedback {
   id: string;
-  client_name: string;
+  client_name_sanitized: string;
   feedback: string;
   rating: number;
   project_title?: string;
-  client_image_url?: string;
-  client_email?: string;
   created_at: string;
 }
 
@@ -25,7 +23,7 @@ const ClientFeedback = () => {
     // Set up real-time subscription
     const channel = supabase
       .channel('feedbacks-changes')
-      .on(
+        .on(
         'postgres_changes',
         {
           event: '*',
@@ -46,8 +44,7 @@ const ClientFeedback = () => {
   const fetchFeedbacks = async () => {
     try {
       const { data, error } = await supabase
-        .from('client_feedbacks')
-        .select('*')
+        .rpc('get_public_feedbacks')
         .order('created_at', { ascending: false });
 
       if (error) throw error;

@@ -148,38 +148,23 @@ export type Database = {
       }
     }
     Views: {
-      public_feedbacks: {
-        Row: {
-          client_name_sanitized: string | null
-          created_at: string | null
-          feedback: string | null
-          id: string | null
-          project_title: string | null
-          rating: number | null
-        }
-        Insert: {
-          client_name_sanitized?: never
-          created_at?: string | null
-          feedback?: string | null
-          id?: string | null
-          project_title?: string | null
-          rating?: number | null
-        }
-        Update: {
-          client_name_sanitized?: never
-          created_at?: string | null
-          feedback?: string | null
-          id?: string | null
-          project_title?: string | null
-          rating?: number | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
       get_current_user_role: {
         Args: Record<PropertyKey, never>
         Returns: string
+      }
+      get_public_feedbacks: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          id: string
+          rating: number
+          feedback: string
+          project_title: string
+          created_at: string
+          client_name_sanitized: string
+        }[]
       }
     }
     Enums: {

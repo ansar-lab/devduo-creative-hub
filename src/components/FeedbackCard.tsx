@@ -1,20 +1,18 @@
 import { Star } from 'lucide-react';
 
 interface FeedbackCardProps {
-  client_name: string;
+  client_name_sanitized: string;
   feedback: string;
   rating: number;
   project_title?: string;
-  client_image_url?: string;
   created_at: string;
 }
 
 export const FeedbackCard = ({ 
-  client_name, 
+  client_name_sanitized, 
   feedback, 
   rating, 
-  project_title, 
-  client_image_url,
+  project_title,
   created_at 
 }: FeedbackCardProps) => {
   const renderStars = (rating: number) => {
@@ -42,23 +40,15 @@ export const FeedbackCard = ({
   return (
     <div className="project-card bg-card p-6">
       <div className="flex items-start gap-4">
-        {client_image_url ? (
-          <img
-            src={client_image_url}
-            alt={client_name}
-            className="w-12 h-12 rounded-full object-cover"
-          />
-        ) : (
-          <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-            <span className="text-primary font-semibold text-lg">
-              {client_name.charAt(0).toUpperCase()}
-            </span>
-          </div>
-        )}
+        <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+          <span className="text-primary font-semibold text-lg">
+            {client_name_sanitized.charAt(0).toUpperCase()}
+          </span>
+        </div>
         
         <div className="flex-1">
           <div className="flex items-center justify-between mb-2">
-            <h4 className="font-semibold">{client_name}</h4>
+            <h4 className="font-semibold">{client_name_sanitized}</h4>
             <span className="text-xs text-muted-foreground">
               {formatDate(created_at)}
             </span>
