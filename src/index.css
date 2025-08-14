@@ -6,60 +6,60 @@
 
 @layer base {
   :root {
-    /* Updated Purple Gradient Background System - #593d6b + #55147d */
-    --background: 280 100% 4%; /* Ultra deep cyber purple */
-    --foreground: 300 30% 98%; /* Bright cyber white text */
+    /* Professional Purple-Black Theme */
+    --background: 240 15% 3%; /* Deep black background */
+    --foreground: 280 10% 95%; /* Clean light text */
 
-    /* Glassmorphism Card System */
-    --card: 267 32% 15%; /* Dark glass purple based on #593d6b */
-    --card-foreground: 300 25% 95%;
-    --glass-bg: 267 32% 15% / 0.1; /* Ultra transparent glass */
-    --glass-border: 267 69% 36% / 0.2; /* Glowing glass border */
+    /* Card System */
+    --card: 240 12% 6%; /* Dark card background */
+    --card-foreground: 280 8% 90%;
+    --glass-bg: 270 60% 35% / 0.05; /* Subtle purple glass */
+    --glass-border: 270 60% 35% / 0.15; /* Professional purple border */
 
     /* Popover System */
-    --popover: 267 32% 12%;
-    --popover-foreground: 300 25% 95%;
+    --popover: 240 12% 8%;
+    --popover-foreground: 280 8% 90%;
 
-    /* Futuristic Primary Colors - Based on #55147d */
-    --primary: 267 69% 29%; /* Primary from #55147d */
-    --primary-foreground: 300 30% 98%;
-    --primary-glow: 267 69% 45%; /* Lighter version for glow */
-    --primary-dark: 267 69% 20%; /* Darker variant */
+    /* Primary Purple (#55147d) */
+    --primary: 270 60% 35%; /* Professional purple #55147d */
+    --primary-foreground: 280 10% 95%;
+    --primary-glow: 270 65% 45%; /* Subtle glow variant */
+    --primary-dark: 270 60% 25%; /* Darker variant */
 
-    /* Cyber Secondary Colors - Based on #593d6b */
-    --secondary: 267 32% 33%; /* Secondary from #593d6b */
-    --secondary-foreground: 300 25% 95%;
+    /* Secondary System */
+    --secondary: 240 15% 12%;
+    --secondary-foreground: 280 8% 85%;
 
-    /* Muted Cyber Tones */
-    --muted: 267 32% 15%;
-    --muted-foreground: 267 20% 65%;
+    /* Muted Tones */
+    --muted: 240 10% 10%;
+    --muted-foreground: 280 6% 70%;
 
-    /* Accent Cyber Colors */
-    --accent: 267 69% 36%;
-    --accent-foreground: 300 25% 95%;
+    /* Accent Colors */
+    --accent: 270 55% 40%;
+    --accent-foreground: 280 8% 90%;
 
-    /* Destructive (cyber red) */
-    --destructive: 0 100% 65%;
-    --destructive-foreground: 300 30% 98%;
+    /* Destructive */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 280 10% 95%;
 
-    /* Futuristic Borders */
-    --border: 285 50% 30% / 0.3;
-    --input: 285 60% 8% / 0.8;
-    --ring: 285 100% 55%;
+    /* Borders and Inputs */
+    --border: 240 20% 15%;
+    --input: 240 15% 8%;
+    --ring: 270 60% 35%;
 
-    /* Updated Gradients - #593d6b + #55147d */
-    --gradient-primary: linear-gradient(135deg, hsl(267, 32%, 15%), hsl(267, 69%, 29%), hsl(267, 32%, 33%));
-    --gradient-hero: radial-gradient(ellipse at center, hsl(267, 69%, 12%), hsl(267, 32%, 8%));
-    --gradient-card: linear-gradient(145deg, hsl(267, 32%, 15% / 0.8), hsl(267, 69%, 20% / 0.6));
-    --gradient-glow: linear-gradient(135deg, hsl(267, 69%, 29%), hsl(267, 69%, 45%));
-    --gradient-glass: linear-gradient(145deg, hsl(267, 32%, 15% / 0.1), hsl(267, 69%, 25% / 0.05));
-    --gradient-neon: linear-gradient(90deg, hsl(267, 69%, 29%), hsl(267, 69%, 45%), hsl(267, 32%, 33%));
+    /* Professional Purple-Black Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270, 60%, 35%), hsl(240, 15%, 3%));
+    --gradient-hero: radial-gradient(ellipse at center, hsl(240, 15%, 3%), hsl(240, 10%, 1%));
+    --gradient-card: linear-gradient(145deg, hsl(240, 12%, 6% / 0.9), hsl(270, 60%, 35% / 0.1));
+    --gradient-glow: linear-gradient(135deg, hsl(270, 60%, 35%), hsl(270, 65%, 45%));
+    --gradient-glass: linear-gradient(145deg, hsl(270, 60%, 35% / 0.05), hsl(240, 12%, 6% / 0.8));
+    --gradient-neon: linear-gradient(90deg, hsl(270, 60%, 35%), hsl(270, 65%, 45%), hsl(270, 60%, 35%));
     
-    /* Updated Shadows - #593d6b + #55147d */
-    --shadow-cyber: 0 0 30px hsl(267 69% 29% / 0.3), 0 0 60px hsl(267 69% 29% / 0.1);
-    --shadow-cyber-lg: 0 0 50px hsl(267 69% 29% / 0.4), 0 0 100px hsl(267 69% 29% / 0.2);
-    --shadow-neon: 0 0 20px hsl(267 69% 45% / 0.6), inset 0 0 20px hsl(267 69% 29% / 0.1);
-    --shadow-glass: 0 8px 32px hsl(267 32% 8% / 0.4), inset 0 1px 0 hsl(267 69% 36% / 0.2);
+    /* Professional Shadows */
+    --shadow-cyber: 0 0 30px hsl(270 60% 35% / 0.3), 0 0 60px hsl(270 60% 35% / 0.1);
+    --shadow-cyber-lg: 0 0 50px hsl(270 60% 35% / 0.4), 0 0 100px hsl(270 60% 35% / 0.2);
+    --shadow-neon: 0 0 20px hsl(270 65% 45% / 0.6), inset 0 0 20px hsl(270 60% 35% / 0.1);
+    --shadow-glass: 0 8px 32px hsl(240 15% 3% / 0.4), inset 0 1px 0 hsl(270 60% 35% / 0.2);
     
     /* Cyber Animations */
     --transition-cyber: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
