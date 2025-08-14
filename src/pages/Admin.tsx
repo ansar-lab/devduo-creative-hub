@@ -145,19 +145,29 @@ const Admin = () => {
 
     try {
       if (editingProject) {
-        const { error } = await supabase
+        const { data, error } = await supabase
           .from('projects')
           .update(projectData)
-          .eq('id', editingProject);
+          .eq('id', editingProject)
+          .select();
 
-        if (error) throw error;
+        if (error) {
+          console.error('Update error:', error);
+          throw error;
+        }
+        console.log('Updated project:', data);
         toast({ title: 'Project updated successfully!' });
       } else {
-        const { error } = await supabase
+        const { data, error } = await supabase
           .from('projects')
-          .insert([projectData]);
+          .insert([projectData])
+          .select();
 
-        if (error) throw error;
+        if (error) {
+          console.error('Insert error:', error);
+          throw error;
+        }
+        console.log('Created project:', data);
         toast({ title: 'Project created successfully!' });
       }
 
@@ -170,11 +180,12 @@ const Admin = () => {
         technologies: ''
       });
       setEditingProject(null);
-      fetchProjects();
-    } catch (error) {
+      await fetchProjects();
+    } catch (error: any) {
+      console.error('Project submission error:', error);
       toast({
         title: 'Error',
-        description: 'Failed to save project',
+        description: error.message || 'Failed to save project',
         variant: 'destructive',
       });
     }
@@ -185,19 +196,29 @@ const Admin = () => {
     
     try {
       if (editingFeedback) {
-        const { error } = await supabase
+        const { data, error } = await supabase
           .from('client_feedbacks')
           .update(feedbackForm)
-          .eq('id', editingFeedback);
+          .eq('id', editingFeedback)
+          .select();
 
-        if (error) throw error;
+        if (error) {
+          console.error('Feedback update error:', error);
+          throw error;
+        }
+        console.log('Updated feedback:', data);
         toast({ title: 'Feedback updated successfully!' });
       } else {
-        const { error } = await supabase
+        const { data, error } = await supabase
           .from('client_feedbacks')
-          .insert([feedbackForm]);
+          .insert([feedbackForm])
+          .select();
 
-        if (error) throw error;
+        if (error) {
+          console.error('Feedback insert error:', error);
+          throw error;
+        }
+        console.log('Created feedback:', data);
         toast({ title: 'Feedback created successfully!' });
       }
 
@@ -210,11 +231,12 @@ const Admin = () => {
         client_email: ''
       });
       setEditingFeedback(null);
-      fetchFeedbacks();
-    } catch (error) {
+      await fetchFeedbacks();
+    } catch (error: any) {
+      console.error('Feedback submission error:', error);
       toast({
         title: 'Error',
-        description: 'Failed to save feedback',
+        description: error.message || 'Failed to save feedback',
         variant: 'destructive',
       });
     }
