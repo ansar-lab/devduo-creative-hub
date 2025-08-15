@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { ProjectCard } from '@/components/ProjectCard';
 import { Loader2, AlertCircle } from 'lucide-react';
+import Background3D from '@/components/Background3D';
 
 interface Project {
   id: string;
@@ -86,7 +87,8 @@ const Projects = () => {
   }
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-24 relative">
+      <Background3D intensity="low" />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">

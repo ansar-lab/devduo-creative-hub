@@ -2,6 +2,7 @@ import { FounderCard } from '@/components/FounderCard';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Code, Smartphone, Megaphone, Palette } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Background3D from '@/components/Background3D';
 
 const Home = () => {
   const services = [
@@ -50,6 +51,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
+      <Background3D intensity="medium" />
       {/* Hero Section */}
       <section className="pt-40 pb-32 px-4 relative">
         {/* Floating geometric shapes */}

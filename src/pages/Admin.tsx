@@ -62,6 +62,7 @@ const Admin = () => {
 
   const [editingProject, setEditingProject] = useState<string | null>(null);
   const [editingFeedback, setEditingFeedback] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     if (loading) return;
@@ -282,6 +283,42 @@ const Admin = () => {
     }
   };
 
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    try {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Math.random()}.${fileExt}`;
+      const filePath = `${fileName}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from('project-images')
+        .upload(filePath, file);
+
+      if (uploadError) {
+        throw uploadError;
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('project-images')
+        .getPublicUrl(filePath);
+
+      setProjectForm(prev => ({ ...prev, image_url: publicUrl }));
+      toast({ title: 'Image uploaded successfully!' });
+    } catch (error: any) {
+      console.error('Upload error:', error);
+      toast({
+        title: 'Upload failed',
+        description: error.message,
+        variant: 'destructive',
+      });
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const handleSignOut = async () => {
     await signOut();
     toast({ title: 'Signed out successfully!' });
@@ -366,7 +403,15 @@ const Admin = () => {
                 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="image_url">Image URL</Label>
+                    <Label htmlFor="image_upload">Upload Image</Label>
+                    <Input
+                      id="image_upload"
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="mb-2"
+                    />
+                    <Label htmlFor="image_url">Or Image URL</Label>
                     <Input
                       id="image_url"
                       type="url"

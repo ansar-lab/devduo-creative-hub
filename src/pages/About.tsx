@@ -1,4 +1,5 @@
 import { Users, Target, Award, Heart } from 'lucide-react';
+import Background3D from '@/components/Background3D';
 
 const About = () => {
   const values = [
@@ -25,7 +26,8 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-24 relative">
+      <Background3D intensity="low" />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">

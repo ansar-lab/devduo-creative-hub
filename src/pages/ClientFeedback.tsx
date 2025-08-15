@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { FeedbackCard } from '@/components/FeedbackCard';
 import { Loader2, AlertCircle, Star } from 'lucide-react';
+import Background3D from '@/components/Background3D';
 
 interface Feedback {
   id: string;
@@ -96,7 +97,8 @@ const ClientFeedback = () => {
   }
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-24 relative">
+      <Background3D intensity="low" />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">

@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, MapPin, Send, Linkedin, Instagram } from 'lucide-react';
+import Background3D from '@/components/Background3D';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -76,7 +77,8 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-24 relative">
+      <Background3D intensity="low" />
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
@@ -174,15 +176,11 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-primary mr-3" />
                     <div>
                       <p className="font-semibold">Email</p>
-                      <div className="text-muted-foreground">
-                        <a href="mailto:tvsathwiktvsathwiksai@gmail.com" className="hover:text-primary transition-colors">
-                          tvsathwiktvsathwiksai@gmail.com
-                        </a>
-                        <br />
-                        <a href="mailto:ansavali3231@gmail.com" className="hover:text-primary transition-colors">
-                          ansavali3231@gmail.com
-                        </a>
-                      </div>
+                       <div className="text-muted-foreground">
+                         <a href="mailto:devduocompany@gmail.com" className="hover:text-primary transition-colors">
+                           devduocompany@gmail.com
+                         </a>
+                       </div>
                     </div>
                   </div>
                   

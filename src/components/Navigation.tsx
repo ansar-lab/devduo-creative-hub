@@ -10,6 +10,7 @@ export const Navigation = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/projects', label: 'Projects' },
+    { path: '/galaxy', label: 'Galaxy' },
     { path: '/feedback', label: 'Client Feedback' },
     { path: '/contact', label: 'Contact' },
     { path: '/admin', label: 'Admin' },
