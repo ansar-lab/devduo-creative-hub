@@ -25,31 +25,29 @@ export const Logo = ({ className, size = 'md', animated = false }: LogoProps) =>
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Circle shape */}
-        <circle
-          cx="35"
-          cy="50"
-          r="25"
+        {/* First D */}
+        <path
+          d="M 20 25 L 20 75 L 45 75 C 55 75 65 65 65 50 C 65 35 55 25 45 25 Z"
           stroke="hsl(var(--primary))"
           strokeWidth="3"
           fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={animated ? 'animate-[draw_2s_ease-in-out_forwards]' : ''}
           style={{
-            strokeDasharray: animated ? '157' : 'none',
-            strokeDashoffset: animated ? '157' : '0'
+            strokeDasharray: animated ? '140' : 'none',
+            strokeDashoffset: animated ? '140' : '0'
           }}
         />
         
-        {/* Rectangle shape */}
-        <rect
-          x="45"
-          y="25"
-          width="35"
-          height="35"
+        {/* Second D (rotated/flipped) */}
+        <path
+          d="M 80 25 L 80 75 L 55 75 C 45 75 35 65 35 50 C 35 35 45 25 55 25 Z"
           stroke="hsl(var(--primary-glow))"
           strokeWidth="3"
           fill="none"
-          rx="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={animated ? 'animate-[draw_2s_ease-in-out_0.5s_forwards]' : ''}
           style={{
             strokeDasharray: animated ? '140' : 'none',
@@ -57,11 +55,12 @@ export const Logo = ({ className, size = 'md', animated = false }: LogoProps) =>
           }}
         />
         
-        {/* Intersection glow effect */}
-        <circle
-          cx="55"
-          cy="40"
-          r="8"
+        {/* Intersection glow effect where D's meet */}
+        <ellipse
+          cx="50"
+          cy="50"
+          rx="6"
+          ry="12"
           fill="hsl(var(--primary-glow) / 0.3)"
           className={animated ? 'animate-[fadeIn_1s_ease-in-out_1.5s_forwards]' : ''}
           style={{ opacity: animated ? '0' : '1' }}
