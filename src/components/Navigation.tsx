@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Logo } from './Logo';
 
 export const Navigation = () => {
   const location = useLocation();
@@ -20,8 +21,9 @@ export const Navigation = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-3xl font-bold cyber-text animate-hologram">
-            DEV DUO
+          <Link to="/" className="flex items-center space-x-3 group">
+            <Logo size="sm" className="group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-2xl font-bold cyber-text animate-hologram">DEV DUO</span>
           </Link>
 
           {/* Desktop Navigation */}
