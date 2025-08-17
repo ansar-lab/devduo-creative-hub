@@ -69,7 +69,7 @@ const Home = () => {
             
             <div className="space-y-6 mb-12">
               <p className="text-2xl md:text-3xl text-primary-glow font-mono animate-fade-in-cyber" style={{ animationDelay: '0.2s' }}>
-                &gt; Crafting Tomorrow's Digital Reality
+                Crafting Tomorrow's Digital Reality
               </p>
               <p className="text-lg md:text-xl text-foreground/90 max-w-4xl mx-auto animate-fade-in-cyber leading-relaxed" style={{ animationDelay: '0.4s' }}>
                 We engineer next-generation digital experiences through advanced web technologies, 
@@ -105,7 +105,7 @@ const Home = () => {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-primary via-primary-glow to-accent mx-auto mb-8" />
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto font-mono">
-              &gt; Professional web and app development services
+              Professional web and app development services
             </p>
           </div>
           
@@ -143,7 +143,7 @@ const Home = () => {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-accent via-primary to-primary-glow mx-auto mb-8" />
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto font-mono">
-              &gt; The visionaries behind the digital revolution
+              The visionaries behind the digital revolution
             </p>
           </div>
           
