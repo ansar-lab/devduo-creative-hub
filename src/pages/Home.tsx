@@ -105,7 +105,7 @@ const Home = () => {
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-primary via-primary-glow to-accent mx-auto mb-8" />
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto font-mono">
-              &gt; Advanced digital solutions powered by quantum algorithms
+              &gt; Professional web and app development services
             </p>
           </div>
           
@@ -174,23 +174,19 @@ const Home = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-8 cyber-text">
                 Initialize Your Vision
               </h2>
-              <p className="text-xl text-foreground/90 mb-12 max-w-3xl mx-auto font-mono leading-relaxed">
-                &gt; Ready to transcend reality? Let's architect your digital future with 
-                cutting-edge technology and unlimited creativity.
-              </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Link to="/contact">
                   <Button className="btn-gradient text-lg px-12 py-6 group">
                     <span className="flex items-center">
-                      Launch Protocol
+                      Start Your Journey
                       <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" size={24} />
                     </span>
                   </Button>
                 </Link>
                 <Link to="/projects">
                   <Button className="btn-neon text-lg px-12 py-6">
-                    View Archives
+                    High Lights Over Time
                   </Button>
                 </Link>
               </div>
