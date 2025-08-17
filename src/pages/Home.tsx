@@ -117,21 +117,14 @@ const Home = () => {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="relative mb-6">
-                  <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${service.color} p-0.5 mx-auto`}>
-                    <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                      <service.icon className="w-10 h-10 text-primary-glow group-hover:scale-110 transition-transform duration-300" />
-                    </div>
+                  <div className="w-20 h-20 rounded-full bg-card/50 border border-primary/30 flex items-center justify-center mx-auto">
+                    <service.icon className="w-10 h-10 text-primary-glow group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 
                 <h3 className="text-xl font-bold mb-4 cyber-text">{service.title}</h3>
                 <p className="text-foreground/80 font-mono text-sm leading-relaxed">{service.description}</p>
                 
-                {/* Animated border */}
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary via-primary-glow to-accent opacity-20 blur-sm" />
-                </div>
               </div>
             ))}
           </div>
@@ -176,10 +169,6 @@ const Home = () => {
       <section className="py-32 px-4 relative">
         <div className="container mx-auto text-center">
           <div className="glass-effect p-16 max-w-5xl mx-auto relative overflow-hidden animate-fade-in-cyber">
-            {/* Animated background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
-            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
             
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 cyber-text">
