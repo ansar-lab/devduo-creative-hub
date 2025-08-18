@@ -27,7 +27,7 @@ export const Logo = ({ className, size = 'md', animated = false }: LogoProps) =>
       >
         {/* First D - Back */}
         <path
-          d="M 25 20 L 25 80 L 50 80 C 65 80 75 65 75 50 C 75 35 65 20 50 20 Z"
+          d="M 25 20 L 25 80 L 50 80 C 65 80 75 65 75 50 C 75 35 65 20 50 20 L 25 20 Z"
           stroke="hsl(var(--primary))"
           strokeWidth="3"
           fill="none"
@@ -42,7 +42,7 @@ export const Logo = ({ className, size = 'md', animated = false }: LogoProps) =>
         
         {/* Second D - Front (overlapping) */}
         <path
-          d="M 40 30 L 40 90 L 65 90 C 80 90 90 75 90 60 C 90 45 80 30 65 30 Z"
+          d="M 40 30 L 40 90 L 65 90 C 80 90 90 75 90 60 C 90 45 80 30 65 30 L 40 30 Z"
           stroke="hsl(var(--primary-glow))"
           strokeWidth="3"
           fill="none"

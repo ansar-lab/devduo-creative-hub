@@ -13,7 +13,6 @@ export const Navigation = () => {
     { path: '/projects', label: 'Projects' },
     { path: '/feedback', label: 'Client Feedback' },
     { path: '/contact', label: 'Contact' },
-    { path: '/admin', label: 'Admin' },
   ];
 
   return (
